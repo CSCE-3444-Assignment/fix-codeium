@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blade - Swords and Axes</title>
+    <style>
+      body {
+        background-color: #222;
+        color: #fff;
+        font-family: "Times New Roman", serif;
+      }
+      
+      header {
+        text-align: center;
+        margin: 20px;
+      }
+      
+      h1 {
+        font-size: 3em;
+        color: #ffd700;
+        text-shadow: 2px 2px 2px #000;
+      }
+      
+      .silver-star {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: silver;
+        border-radius: 50%;
+        transform: scale(0);
+        transition: transform 0.3s ease-in-out;
+      }
+      
+      .silver-star:hover {
+        transform: scale(1);
+      }
+      
+      #swords {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      
+      .sword {
+        width: 200px;
+        height: 300px;
+        background-color: #444;
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      
+      .sword-image {
+        width: 180px;
+        height: 200px;
+        background-color: #666;
+        margin-bottom: 10px;
+      }
+      
+      .sword-details {
+        font-size: 1em;
+        padding: 10px;
+        background-color: #888;
+      }
+    </style>
+    <script>
+      window.addEventListener("DOMContentLoaded", function() {
+        const stars = document.querySelectorAll(".silver-star");
+        stars.forEach(function(star) {
+          star.addEventListener("mousemove", function(event) {
+            const rect = event.target.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+            star.style.transform = `translate(${x}px, ${y}px)`;
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Blade</h1>
+    </header>
+    <div id="swords">
+      <div class="sword">
+        <div class="sword-image"></div>
+        <div class="sword-details">
+          <p>Longsword</p>
+          <p>Description of longsword</p>
+        </div>
+        <div class="silver-star"></div>
+        <div class="silver-star"></div>
+        <div class="silver-star"></div>
+      </div>
+      <div class="sword">
+        <div class="sword-image"></div>
+        <div class="sword-details">
+          <p>Shortsword</p>
+          <p>Description of shortsword</p>
+        </div>
+        <div class="silver-star"></div>
+        <div class="silver-star"></div>
+        <div class="silver-star"></div>
+      </div>
+      <div class="sword">
+        <div class="sword-image"></div>
+        <div class="sword-details">
+          <p>Broadsword</p>
+          <p>Description of broadsword</p>
+        </div>
+        <div class="silver-star"></div>
+        <div class="silver-star"></div>
+        <div class="silver-star"></div>
+      </div>
+    </div>
+  </body>
+</html>
